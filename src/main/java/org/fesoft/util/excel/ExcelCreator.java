@@ -121,7 +121,13 @@ public class ExcelCreator {
             return;
         }
         if (data instanceof Integer) {
-            cell.setCellValue(Double.parseDouble(String.valueOf(data)));
+            int num = (int) data;
+            cell.setCellValue(num);
+            return;
+        }
+        if (data instanceof Float) {
+            float num = (float) data;
+            cell.setCellValue(num);
         }
 
     }
