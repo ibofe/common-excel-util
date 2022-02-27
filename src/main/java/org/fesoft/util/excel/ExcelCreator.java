@@ -129,6 +129,10 @@ public class ExcelCreator {
             float num = (float) data;
             cell.setCellValue(num);
         }
+        if (data instanceof Double) {
+            double num = (double) data;
+            cell.setCellValue(num);
+        }
 
     }
 
