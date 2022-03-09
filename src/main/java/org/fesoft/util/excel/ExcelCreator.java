@@ -12,6 +12,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -118,20 +119,24 @@ public class ExcelCreator {
     private void writeToCell(Cell cell, Object data) {
         if (data instanceof String) {
             cell.setCellValue((String) data);
+            cell.setCellType(CellType.STRING);
             return;
         }
         if (data instanceof Integer) {
             int num = (int) data;
             cell.setCellValue(num);
+            cell.setCellType(CellType.NUMERIC);
             return;
         }
         if (data instanceof Float) {
             float num = (float) data;
             cell.setCellValue(num);
+            cell.setCellType(CellType.NUMERIC);
         }
         if (data instanceof Double) {
             double num = (double) data;
             cell.setCellValue(num);
+            cell.setCellType(CellType.NUMERIC);
         }
 
     }
